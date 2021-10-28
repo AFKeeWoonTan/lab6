@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Checkout SCM') {
 			steps {
-				git '/home/JenkinsDependencyCheckTest'
+				git '/home/Documents/cloak.pte.ltd/projects-docs/SIT/notes/Lab/lab6/JenkinsDependencyCheckTest'
 			}
 		}
 
@@ -12,7 +12,7 @@ pipeline {
 				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
 			}
 		}
-	}	
+	}
 	post {
 		success {
 			dependencyCheckPublisher pattern: 'dependency-check-report.xml'
